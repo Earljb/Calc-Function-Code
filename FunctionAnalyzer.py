@@ -25,3 +25,10 @@ CONCAvITY
 """
 POINTS OF INFLECTION
 """
+
+step = 1000
+
+x_values = [x/step for x in list(range(0,3*step+1))]
+
+for x in x_values:
+    print(x**2)
