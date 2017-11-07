@@ -13,16 +13,19 @@ term=input("How many terms do you want in your function?")
 step = 1
 calc_precision = 0.0001
 
-x_values = [x/step for x in list(range(-3,3*step+1))]
+x_values = [x/step for x in list(range(-3*step,3*step+1))]
 
-f_data = [[x_values[i],0,0] for i in len(x_values)]
-print(f_data)
+f_data = []
 
 for x in x_values:
-    f = x**2
-    print(f,end='  <>  ')
-    print(((x+calc_precision)**2-(x-calc_precision)**2)/(2*calc_precision))
-
+    fp = ((x+calc_precision)**2-(x-calc_precision)**2)/(2*calc_precision)
+    f_data.append([x,x**2,fp])
+    #f = x**2
+    #print(f,end='  <>  ')
+    #print(fp)
+    
+#f_data = [[x,f,fp] for x in x_values]
+print(f_data)
 """
 EXTREMA
 """
