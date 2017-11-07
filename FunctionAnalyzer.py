@@ -5,3 +5,6 @@ We need to give an input of a function and output:
 -concave up/down
 -points of inflection
 """
+term=input("How many terms do you want in your function?")
+if term == 1
+    
