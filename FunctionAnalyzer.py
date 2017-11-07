@@ -11,3 +11,17 @@ term=input("How many terms do you want in your function?")
 """
 
 """
+EXTREMA
+"""
+
+"""
+INC/DEC INTERVALS
+"""
+
+"""
+CONCAvITY
+"""
+
+"""
+POINTS OF INFLECTION
+"""
