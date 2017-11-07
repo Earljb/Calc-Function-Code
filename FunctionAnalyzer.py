@@ -15,7 +15,7 @@ calc_precision = 0.0001
 
 x_values = [x/step for x in list(range(-3,3*step+1))]
 
-f_data = [(x_values[i],0,0) for i in len(x_values)]
+f_data = [[x_values[i],0,0] for i in len(x_values)]
 print(f_data)
 
 for x in x_values:
