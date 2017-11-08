@@ -11,7 +11,7 @@ term = input("How many terms do you want in your function?")
 interval = input("What interval do you want us to analyze?"
 """
 
-from math import sin
+from math import sin, pi
 
 step = 100
 calc_precision = 0.0001
