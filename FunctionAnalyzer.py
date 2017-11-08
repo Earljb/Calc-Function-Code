@@ -21,7 +21,7 @@ f_data = []
 for x in x_values:
     #fp = ((x+calc_precision)**2-(x-calc_precision)**2)/(2*calc_precision)
     fp = ((x+calc_precision)**3-(x+calc_precision)-(((x-calc_precision)**2)-(x-calc_precision)))/(2*calc_precision)
-    f_data.append([x,x**2,fp])
+    f_data.append([x,x**3-x,fp])
     
 print(f_data)
 """
