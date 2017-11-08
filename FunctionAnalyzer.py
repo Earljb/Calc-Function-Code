@@ -21,14 +21,16 @@ f_data = []
 for x in x_values:
     fp = ((x+calc_precision)**2-(x-calc_precision)**2)/(2*calc_precision)
     f_data.append([x,x**2,fp])
-    #f = x**2
-    #print(f,end='  <>  ')
-    #print(fp)
     
-#f_data = [[x,f,fp] for x in x_values]
 print(f_data)
 """
 EXTREMA
+"""
+
+for i in range(len(f_data)):
+    if f_data[i][2] < 0 and f_data[i+1][2] > 0:
+        print("Local min at "+str(f_data[i][0]))
+"""
 """
 
 """
