@@ -7,7 +7,8 @@ We need to give an input of a function and output:
 """
 
 """
-term=input("How many terms do you want in your function?")
+term = input("How many terms do you want in your function?")
+interval = input("What interval do you want us to analyze?"
 """
 
 step = 1
