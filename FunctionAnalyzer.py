@@ -29,7 +29,7 @@ EXTREMA
 
 for i in range(len(f_data)):
     if f_data[i][2] < 0 and f_data[i+2][2] > 0:
-        print("Local min at "+str(f_data[i+1]))
+        print("Local min at "+str(f_data[i+1][0]))
 """
 """
 
