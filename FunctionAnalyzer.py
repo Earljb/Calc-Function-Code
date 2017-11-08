@@ -27,11 +27,10 @@ print(f_data)
 EXTREMA
 """
 
-for i in range(len(f_data)):
+for i in range(len(f_data)-2):
     if f_data[i][2] < 0 and f_data[i+2][2] > 0:
         print("Local min at "+str(f_data[i+1][0]))
-for i in range(len(f_data)):
-    if f_data[i][2] > 0 and f_data[i+2][2] < 0:
+    elif f_data[i][2] > 0 and f_data[i+2][2] < 0:
         print("Local max at "+str(f_data[i+1][0]))
     else:
         print("There are no local max's in the interval")
