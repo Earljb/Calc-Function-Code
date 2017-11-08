@@ -11,7 +11,7 @@ term = input("How many terms do you want in your function?")
 interval = input("What interval do you want us to analyze?"
 """
 
-step = 1
+step = 100
 calc_precision = 0.0001
 
 x_values = [x/step for x in list(range(-3*step,3*step+1))]
@@ -28,7 +28,7 @@ EXTREMA
 """
 
 for i in range(len(f_data)):
-    if f_data[i][2] < 0 and f_data[i+1][2] > 0:
+    if f_data[i][2] < 0 and f_data[i+1][2] >= 0:
         print("Local min at "+str(f_data[i][0]))
 """
 """
