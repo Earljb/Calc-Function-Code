@@ -16,7 +16,7 @@ from math import sin, pi
 step = 100
 calc_precision = 0.0001
 
-x_values = [x/step for x in list(range(-3*step,3*step+1))]
+x_values = [x/step for x in list(range(-2*pi*step,2*pi*step+1))]
 
 f_data = []
 
@@ -24,7 +24,7 @@ for x in x_values:
     #fp = ((x+calc_precision)**2-(x-calc_precision)**2)/(2*calc_precision)
     #fp = ((x+calc_precision)**3-(x+calc_precision)-(((x-calc_precision)**3)-(x-calc_precision)))/(2*calc_precision)
     fp = (sin(x+calc_precision)-sin(x-calc_precision))/(2*calc_precision)
-    f_data.append([x,x**3-x,fp])
+    f_data.append([x,sin(x),fp])
     
 print(f_data)
 """
