@@ -16,7 +16,7 @@ from math import sin, pi
 step = 100
 calc_precision = 0.0001
 
-x_values = [x/step for x in list(range(-6.28*step,6.28*pi*step+1))]
+x_values = [x/step for x in list(range(-7*step,7*step+1))]
 
 f_data = []
 
