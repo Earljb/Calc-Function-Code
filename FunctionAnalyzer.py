@@ -43,12 +43,16 @@ for i in range(len(f_data)-2):
         print("Local max at x = "+str(f_data[i+1][0]))
     #else:
     #    print("There are no local max's in the interval")
-"""
-"""
 
 """
 INC/DEC INTERVALS
 """
+
+for i in range(len(f_data)-2):
+    if f_data[i][2] < 0:
+        print("There is a decreasing interval on ["+str(f_data[i+1][0])+"]")
+    elif f_data[i][2] > 0:
+        print("There is an increasing interval on [ "+str(f_data[i+1][0])+"]")
 
 """
 CONCAvITY
@@ -57,6 +61,7 @@ CONCAvITY
 """
 POINTS OF INFLECTION
 """
+
 for i in range(len(f_data)-2):
     if f_data[i][3] < 0 and f_data[i+1][3] <= 0 and f_data[i+2][3] > 0:
         print("Point of inflection at x = "+str(f_data[i+1][0]))
