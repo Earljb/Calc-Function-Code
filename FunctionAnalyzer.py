@@ -56,4 +56,8 @@ CONCAvITY
 """
 POINTS OF INFLECTION
 """
-
+for i in range(len(f_data)-2):
+    if f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
+        print("Point of inflection at x = "+str(f_data[i+1][0]))
+    elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
+        print("Point of inflection at x = "+str(f_data[i+1][0]))
