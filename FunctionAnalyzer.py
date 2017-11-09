@@ -20,11 +20,12 @@ x_values = [x/step for x in list(range(-7*step,7*step+1))]
 
 f_data = []
 
+fp = lambda a: (sin(a+calc_precision)-sin(a-calc_precision))/(2*calc_precision)
+
 for x in x_values:
     #fp = ((x+calc_precision)**2-(x-calc_precision)**2)/(2*calc_precision)
     #fp = ((x+calc_precision)**3-(x+calc_precision)-(((x-calc_precision)**3)-(x-calc_precision)))/(2*calc_precision)
     #fp = (sin(x+calc_precision)-sin(x-calc_precision))/(2*calc_precision)
-    fp = lambda a: (sin(a+calc_precision)-sin(a-calc_precision))/(2*calc_precision)
     #fpp = (
     f_data.append([x,sin(x),fp(x)])
     
