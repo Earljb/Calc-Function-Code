@@ -48,8 +48,11 @@ for i in range(len(f_data)-2):
 INC/DEC INTERVALS
 """
 
+interval = []
+
 for i in range(len(f_data)-2):
     if f_data[i][2] < 0:
+        interval.append
         print("There is a decreasing interval on ["+str(f_data[i+1][0])+"]")
     elif f_data[i][2] > 0:
         print("There is an increasing interval on [ "+str(f_data[i+1][0])+"]")
