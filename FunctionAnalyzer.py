@@ -8,7 +8,7 @@ We need to give an input of a function and output:
 
 from math import sin, pi
 
-step = 1
+step = 10
 calc_precision = 0.0001
 
 x_values = [x/step for x in list(range(-7*step,7*step+1))]
