@@ -49,10 +49,10 @@ i_interval = []
 for i in range(len(f_data)-2):
     if f_data[i][2] < 0:
         d_interval.append(f_data[i][0])
-        print("There is a decreasing interval on ["+str(d_interval)+"]")
     elif f_data[i][2] > 0:
         i_interval.append(f_data[i][0])
-        print("There is an increasing interval on [ "+str(i_interval)+"]")
+print("There is a decreasing interval on ["+str(d_interval)+"]")
+print("There is an increasing interval on [ "+str(i_interval)+"]")
 
 """
 CONCAvITY
