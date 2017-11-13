@@ -6,11 +6,6 @@ We need to give an input of a function and output:
 -points of inflection
 """
 
-"""
-term = input("How many terms do you want in your function?")
-interval = input("What interval do you want us to analyze?"
-"""
-
 from math import sin, pi
 
 step = 100
