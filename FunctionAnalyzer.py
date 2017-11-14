@@ -16,15 +16,15 @@ x_values = [x/step for x in list(range(-7*step,7*step+1))]
 f_data = []
 
 #fp = lambda a: (sin(a+calc_precision)-sin(a-calc_precision))/(2*calc_precision)
-#fp = lambda a: ((a+calc_precision)**2-(a-calc_precision)**2)/(2*calc_precision)
-fp = lambda a: ((a+calc_precision)**3-(a+calc_precision)-(((a-calc_precision)**3)-(a-calc_precision)))/(2*calc_precision)
+fp = lambda a: ((a+calc_precision)**2-(a-calc_precision)**2)/(2*calc_precision)
+#fp = lambda a: ((a+calc_precision)**3-(a+calc_precision)-(((a-calc_precision)**3)-(a-calc_precision)))/(2*calc_precision)
 
 for x in x_values:
     #fp = ((x+calc_precision)**2-(x-calc_precision)**2)/(2*calc_precision)
     #fp = ((x+calc_precision)**3-(x+calc_precision)-(((x-calc_precision)**3)-(x-calc_precision)))/(2*calc_precision)
     #fp = (sin(x+calc_precision)-sin(x-calc_precision))/(2*calc_precision)
     #fpp = (
-    f_data.append([x,x**3-x,fp(x),(fp(x+calc_precision)-fp(x-calc_precision))/(2*calc_precision)])
+    f_data.append([x,x**2,fp(x),(fp(x+calc_precision)-fp(x-calc_precision))/(2*calc_precision)])
     
 print(f_data)
 """
@@ -47,12 +47,12 @@ d_interval = []
 i_interval = []
 
 for i in range(len(f_data)-2):
-    if f_data[i][2] < 0:
+    if f_data[i][2] < 0 and f_data[i+2][2] < 0:
         d_interval.append(f_data[i][0])
-    elif f_data[i][2] > 0:
-        i_interval.append(f_data[i][0])
-print("There is a decreasing interval on "+str(d_interval)+)
-print("There is an increasing interval on "+str(i_interval)+)
+    #elif f_data[i][2] > 0:
+    #    i_interval.append(f_data[i][0])
+print("There is a decreasing interval on "+str(d_interval[i][0])+", "+str(d_interval[i][-1])+"]")
+#print("There is an increasing interval on "+str(i_interval[i][0])+","+str(i_interval[i][-1])+"]")
 
 """
 CONCAvITY
