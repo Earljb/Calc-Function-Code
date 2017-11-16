@@ -49,7 +49,7 @@ i_interval = []
 
 
 for i in range(len(f_data)-2):
-    if f_data[i][2] < 0 and f_data[i+1][2] < 0:
+    if f_data[i][2] < 0:
         for i in range(len(f_data)):
             if f_data[i][2] < f_data[i+1][2] and f_data[i][2] <= f_data[i+1][2]:
                 d_start = f_data[i][0]
