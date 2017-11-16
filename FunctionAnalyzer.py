@@ -60,6 +60,8 @@ for i in range(len(f_data)-2):
         i_stop = f_data[i][0]
     d_interval = [i_start,i_stop]
 
+#MAKE SURE TO HAVE A WAY TO DO ENDPOINTS
+
 
 print("There is a decreasing interval on "+str(d_interval))
 print("There is an increasing interval on "+str(i_interval))
