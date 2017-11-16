@@ -36,8 +36,15 @@ for i in range(len(f_data)-2):
         print("Local min at x = "+str(f_data[i+1][0]))
     elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
         print("Local max at x = "+str(f_data[i+1][0]))
-    #else:
-    #    print("There are no local max's in the interval")
+
+for i in range(len(f_data)-2):
+    if f_data[i][1] == max(f_data[:][1]:
+        abs_max = f_data[i][0]
+    elif f_data[i][1] == min(f_data[:][1]:
+        abs_min == f_data[i][0]
+
+print(str(abs_max))
+print(str(abs_min))
 
 """
 INC/DEC INTERVALS
