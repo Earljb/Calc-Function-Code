@@ -49,8 +49,11 @@ i_interval = []
 for i in range(len(f_data)-2):
     if f_data[i][2] < 0 and f_data[i+1][2] < 0:
         d_interval.append(f_data[i][0])
-    elif f_data[i+1][2] < 0 and f_data[i+2][2] > 0:
-        d_interval.append([f_data[i][0],f_data[i][-1]])
+        for i in range(len(d_interval):
+            if d_interval[i][0] < d_interval[i+1][0] and d_interval[i][0] <= d_interval[i+2][0]:
+                d_interval.append(f_data[i][0],f_data[i][-1])
+            elif d_interval[i+1][0] > d_interval[i][0] and d_interval[i+1][0] >= d_interval[i][0]:
+                d_interval.append(f_data[0],f_data[-1])
 #    elif f_data[i][2] > 0 and f_data[i+1][2] > 0:
 #        i_interval.append(f_data[i][0])
 print("There is a decreasing interval on ["+str(d_interval[0])+"]")
