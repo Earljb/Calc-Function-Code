@@ -54,8 +54,8 @@ for i in range(len(f_data)-2):
         d_interval.append(f_data[i][0])
         for i in range(len(f_data)):
             if f_data[i][0] < f_data[i+1][0] and f_data[i][0] <= f_data[i+1][0]:
-                d_interval.append(ds_interval)
-            elif f_data[i+1][0] > f_data[i][0] and f_data[i+1][0] >= f_data[i][0]:
+                d_interval.append(db_interval)
+            elif f_data[i+1][0] < f_data[i][0] and f_data[i+1][0] <= f_data[i][0]:
                 d_interval.append(ds_interval)
 #    elif f_data[i][2] > 0 and f_data[i+1][2] > 0:
 #        i_interval.append(f_data[i][0])
