@@ -46,16 +46,16 @@ INC/DEC INTERVALS
 d_interval = []
 i_interval = []
 
-for i in range(len(f_data)):
+for i in range(len(f_data)-2):
     if f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
         d_start = f_data[i][0]
     elif f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
         d_stop = f_data[i][0]
-    d_interval.append(d_start,d_stop)
+    d_interval = [d_start,d_stop]
 
 #    elif f_data[i][2] > 0 and f_data[i+1][2] > 0:
 #        i_interval.append(f_data[i][0])
-#print("There is a decreasing interval on ["+str(d_interval)+"]")
+print("There is a decreasing interval on ["+str(d_interval)+"]")
 #print("There is an increasing interval on ["+str(i_interval[0])+", "+str(i_interval[-1])+"]")
 
 """
