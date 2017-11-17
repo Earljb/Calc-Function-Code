@@ -233,7 +233,7 @@ INC/DEC INTERVALS
 """
 
 for i in range(0,len(extrema)-1): #Creates a loop for looking at the terms
-    if f_data[extrema_i[i]+1][2] < 0: #This is looking at the first derivative and seeing where the first derivative is negative, if it is then the interval is decreasing.
+    if f_data[extrema_i[i]+1][2] < 0: #This is looking at where the absolute max/min and the local max/min and 
         print("Decreasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
     elif f_data[extrema_i[i]+1][2] > 0: #The same process for increasing intervals.
         print("Increasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
@@ -262,9 +262,9 @@ POI_i.append(len(f_data))
 CONCAvITY
 """
 
-for i in range(0,len(POI)-1): #
-    if f_data[POI_i[i]+1][3] < 0:
+for i in range(0,len(POI)-1): #Creates a loop to analyze where the POI occur.
+    if f_data[POI_i[i]+1][3] < 0: #Looks at where the POI are and say that the interval is between the two POI
         print("Concave down interval on ["+str(POI[i])+", "+str(POI[i+1])+"]")
-    elif f_data[POI_i[i]+1][3] > 0:
+    elif f_data[POI_i[i]+1][3] > 0: #The same process as above but for other intervals.
         print("Concave up interval on ["+str(POI[i])+", "+str(POI[i+1])+"]")
 
