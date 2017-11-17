@@ -90,13 +90,16 @@ for i in range(len(f_data)-2):
     if f_data[i][3] < 0 and f_data[i+1][3] <= 0 and f_data[i+2][3] > 0:
         print("Point of inflection at x = "+str(f_data[i+1][0]))
         POI.append(f_data[i+1][0])
-        POI_i.append(f_data[i+1][0])
+        POI_i.append(i+1)
     elif f_data[i][3] > 0 and f_data[i+1][3] >= 0 and f_data[i+2][3] < 0:
         print("Point of inflection at x = "+str(f_data[i+1][0]))
         POI.append(f_data[i+1][0])
-        POI_i.append(f_data[i+1][0])
+        POI_i.append(i+1)
 POI.append(f_data[-1][0])
 POI_i.append(len(f_data))
+
+print(str(POI))
+print(str(POI_i))
 
 """
 CONCAvITY
