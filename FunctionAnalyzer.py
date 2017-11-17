@@ -79,17 +79,6 @@ for i in range(0,len(extrema)-1):
         print("There is a increasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
 
 """
-CONCAvITY
-"""
-
-for i in range(0,len(extrema)-1):
-    print(str(extrema_i[i]+1))
-    if f_data[extrema_i[i]+1][3] < 0:
-        print("There is a concave down interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
-    elif f_data[extrema_i[i]+1][3] > 0:
-        print("There is a concave up interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
-
-"""
 POINTS OF INFLECTION
 """
 
@@ -100,5 +89,23 @@ POI_i = [0]
 for i in range(len(f_data)-2):
     if f_data[i][3] < 0 and f_data[i+1][3] <= 0 and f_data[i+2][3] > 0:
         print("Point of inflection at x = "+str(f_data[i+1][0]))
+        POI.append(f_data[i+1][0])
+        POI_i.append(f_data[i+1][0])
     elif f_data[i][3] > 0 and f_data[i+1][3] >= 0 and f_data[i+2][3] < 0:
         print("Point of inflection at x = "+str(f_data[i+1][0]))
+        POI.append(f_data[i+1][0])
+        POI_i.append(f_data[i+1][0])
+POI.append(f_data[-1][0])
+POI_i.append(len(f_data)
+
+"""
+CONCAvITY
+"""
+
+for i in range(0,len(extrema)-1):
+    print(str(extrema_i[i]+1))
+    if f_data[extrema_i[i]+1][3] < 0:
+        print("There is a concave down interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
+    elif f_data[extrema_i[i]+1][3] > 0:
+        print("There is a concave up interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
+
