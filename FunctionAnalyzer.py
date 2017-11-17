@@ -72,25 +72,9 @@ print("There is an absolute min at x = "+str(abs_min_x))
 INC/DEC INTERVALS
 """
 
-d_interval = []
-i_interval = []
-
-for i in range(0,len(f_data)-2):
-    if f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
-        d_start = f_data[i][0]
-    elif f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
-        d_stop = f_data[i][0]
-    d_interval = [d_start,d_stop]
-    
-for i in range(0,len(f_data)-2):
-    if f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
-        i_start = f_data[i][0]
-    elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
-        i_stop = f_data[i][0]
-    d_interval = [i_start,i_stop]
-
-print("There is a decreasing interval on "+str(d_interval))
-print("There is an increasing interval on "+str(i_interval))
+for i in range(0,len(extrema)-1):
+    if f_data[extrema_i[i]+1][2] < 0:
+        print("There is a decreasing interval on ["+str(extrema_i)+", "+str(extrema_i+1)+"]")
 
 """
 CONCAvITY
