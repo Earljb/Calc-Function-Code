@@ -30,8 +30,6 @@ print(f_data)
 """
 EXTREMA
 """
-for i in range(0, len(f_data)):
-    print("We're on time %d" % (i))
 
 for i in range(0,len(f_data)-2):
     if f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
@@ -40,16 +38,16 @@ for i in range(0,len(f_data)-2):
         print("Local max at x = "+str(f_data[i+1][0]))
 
 for i in range(0, len(f_data)):
-    print("We're on time %d" % (i))
-    print(str(min(f_data[:][1])))
+    print(str(i))
+    print(str(f_data[i][1]))
     print(str(max(f_data[:][1])))
-    if float(f_data[i][1]) == max(f_data[:][1]):
+    if float(f_data[i][1]) == max(float(f_data[:][1])):
         abs_max = f_data[i][0]
-    elif float(f_data[i][1]) == min(f_data[:][1]):
-        abs_min == f_data[i][0]
+    elif float(f_data[i][1]) == min(float(f_data[:][1])):
+        abs_min = f_data[i][0]
 
-print(str(abs_max))
-print(str(abs_min))
+print("There is an absolute max at x = "+str(abs_max))
+print("There is an absolute min at x = "+str(abs_min))
 
 """
 INC/DEC INTERVALS
