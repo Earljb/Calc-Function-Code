@@ -15,16 +15,15 @@ x_values = [x/step for x in list(range(-7*step,7*step+1))]
 
 f_data = []
 
-#fp = lambda a: (sin(a+calc_precision)-sin(a-calc_precision))/(2*calc_precision)
+fp = lambda a: (sin(a+calc_precision)-sin(a-calc_precision))/(2*calc_precision)
 #fp = lambda a: ((a+calc_precision)**2-(a-calc_precision)**2)/(2*calc_precision)
-fp = lambda a: ((a+calc_precision)**3-(a+calc_precision)-(((a-calc_precision)**3)-(a-calc_precision)))/(2*calc_precision)
+#fp = lambda a: ((a+calc_precision)**3-(a+calc_precision)-(((a-calc_precision)**3)-(a-calc_precision)))/(2*calc_precision)
 
 for x in x_values:
     #fp = ((x+calc_precision)**2-(x-calc_precision)**2)/(2*calc_precision)
     #fp = ((x+calc_precision)**3-(x+calc_precision)-(((x-calc_precision)**3)-(x-calc_precision)))/(2*calc_precision)
     #fp = (sin(x+calc_precision)-sin(x-calc_precision))/(2*calc_precision)
-    #fpp = (
-    f_data.append([x,x**3-x,fp(x),(fp(x+calc_precision)-fp(x-calc_precision))/(2*calc_precision)])
+    f_data.append([x,sin(x),fp(x),(fp(x+calc_precision)-fp(x-calc_precision))/(2*calc_precision)])
     
 print(f_data)
 """
@@ -48,9 +47,6 @@ for i in range(0,len(f_data)-2):
         extrema_i.append(i+1)
 extrema.append(f_data[-1][0])
 extrema_i.append(len(f_data))
-
-print(str(extrema_i))
-print(str(extrema))
 
 abs_max = float(f_data[0][1])
 abs_max_x = float(f_data[0][0])
