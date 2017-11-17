@@ -11,18 +11,8 @@ Instructions:
 1. Hit "GO"
 
 2. Enter a function into the input box
-Example function inputs:
-_3*(x-1)^3
-7*sin(x+p)
-5*x^4-1.3*x^2
 
-3. Enter a closed interval with integer endpoints to use as the domain (separate 
-start and end points with a comma and no space)
-Example domain inputs:
--1,1
-0,5
-
-
+Function input rules:
 -Use x as the independent variable
 -Denote operations using the following symbols: '+' (addition), '-' (subtraction),
 '*' (multiplication), '/' (division), '^' exponent
@@ -37,13 +27,26 @@ with no symbol to imply multiplication (ex. write 2*(x+1), NOT 2(x+1))
 -Parentheses may be used (multiple sets may be used, but not concentric sets)
 -Use parentheses and the division symbol for rational functions
 -Pi and Euler's number may be denoted using p and e respectively
+
+Example function inputs:
+_3*(x-1)^3
+7*sin(x+p)
+5*x^4-1.3*x^2
+
+3. Enter a closed interval with integer endpoints to use as the domain (separate 
+start and end points with a comma and no space)
+
+Example domain inputs:
+-1,1
+0,5
+-10,0
 '''
 
 from math import sin, cos, tan, pi, e
 
 f_string = input("Please enter function ")
 domain = input("Please enter a closed interval for the domain ")
-domain = [int(domain[:domain.index(',')]),int(domain[domain.index(','):])]
+domain = [int(domain[:domain.index(',')]),int(domain[domain.index(',')+1:])]
 
 fl_orig = [] #Defines fl_orig, which will contain items representing the various "pieces" (numbers, x, operations, etc.) of the function
 
@@ -137,7 +140,7 @@ def evaluate(f_list): #Defines evalute function, which can compute any list usin
 step = 10
 calc_precision = 0.0001
 
-x_values = [x/step for x in list(range(-1*domain[0]*step,domain[1]*step+1))]
+x_values = [x/step for x in list(range(domain[0]*step,domain[1]*step+1))]
 
 f_data = []
 
