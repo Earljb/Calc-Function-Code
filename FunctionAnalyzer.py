@@ -40,12 +40,12 @@ for i in range(0,len(f_data)-2):
         local_min = f_data[i+1][0]
         print("Local min at x = "+str(f_data[i+1][0]))
         extrema.append(local_min)
-        extrema_i.append(i)
+        extrema_i.append(i+1)
     elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
         local_max = f_data[i+1][0]
         print("Local max at x = "+str(f_data[i+1][0]))
         extrema.append(local_max)
-        extrema_i.append(i)
+        extrema_i.append(i+1)
 extrema.append(f_data[-1][0])
 extrema_i.append(len(f_data))
 
@@ -72,7 +72,7 @@ print("There is an absolute min at x = "+str(abs_min_x))
 INC/DEC INTERVALS
 """
 
-print(str(f_data[extrema_i[1]][2]))
+print(str(f_data[extrema_i[1]-4][1]))
 
 for i in range(0,len(extrema)-1):
     print(str(extrema_i[i]+1))
