@@ -33,17 +33,23 @@ EXTREMA
 
 extrema = [f_data[0][0]]
 
+extrema_i = [0]
+
 for i in range(0,len(f_data)-2):
     if f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
         local_min = f_data[i+1][0]
         print("Local min at x = "+str(f_data[i+1][0]))
         extrema.append(local_min)
+        extrema_i.append(i)
     elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
         local_max = f_data[i+1][0]
         print("Local max at x = "+str(f_data[i+1][0]))
         extrema.append(local_max)
+        extrema_i.append(i)
 extrema.append(f_data[-1][0])
+extrema_i.append(len(f_data))
 
+print(str(extrema_i))
 print(str(extrema))
 
 abs_max = float(f_data[0][1])
@@ -82,9 +88,6 @@ for i in range(0,len(f_data)-2):
     elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
         i_stop = f_data[i][0]
     d_interval = [i_start,i_stop]
-
-#MAKE SURE TO HAVE A WAY TO DO ENDPOINTS
-
 
 print("There is a decreasing interval on "+str(d_interval))
 print("There is an increasing interval on "+str(i_interval))
