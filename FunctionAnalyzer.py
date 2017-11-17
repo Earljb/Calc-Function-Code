@@ -143,17 +143,18 @@ def evaluate(f_list): #Defines evalute function, which can compute any list usin
         f_list = f_list[:op_i-1]+[result]+f_list[op_i+2:]
     return f_list[0] #List should now contain only one number, which represents the calculated result - function returns this number
     
-step = 10
-calc_precision = 0.0001
+calc_precision = 0.0001 #Variable which controls the precision of numerical derivative calculations
 
-x_values = [x/step for x in list(range(domain[0]*step,domain[1]*step+1))]
+x_values = [x/step for x in list(range(domain[0]*step,domain[1]*step+1))] #Defines list of x values which will be used using domain and step
 
-f_data = []
+f_data = [] #Creates f_data, a complex list which will hold all calculated values
+#Each item in f_data is a smaller 4-item list, consisting of an x value, f(x), f'(x), and f''(x)
 
-fp = lambda x: (f(x+calc_precision)-f(x-calc_precision))/(2*calc_precision)
+fp = lambda x: (f(x+calc_precision)-f(x-calc_precision))/(2*calc_precision) #Defines function for calculating the numerical derivative of a point
 
 for x in x_values:
-    f_data.append([x,f(x),fp(x),(fp(x+calc_precision)-fp(x-calc_precision))/(2*calc_precision)])
+    f_data.append([x,f(x),fp(x),(fp(x+calc_precision)-fp(x-calc_precision))/(2*calc_precision)]) #Assembles f_data
+#f''(x) is calculated by finding the slope between two nearby points on f'(x)
     
 print(f_data)
 """
