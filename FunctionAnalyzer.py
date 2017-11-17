@@ -16,9 +16,12 @@ _3*(x-1)^3
 7*sin(x+p)
 5*x^4-1.3*x^2
 
-3. Enter a closed interval to use as the domain (separate start and end points with a comma and no space)
+3. Enter a closed interval with integer endpoints to use as the domain (separate 
+start and end points with a comma and no space)
 Example domain inputs:
-1,1
+-1,1
+0,5
+
 
 -Use x as the independent variable
 -Denote operations using the following symbols: '+' (addition), '-' (subtraction),
@@ -40,6 +43,7 @@ from math import sin, cos, tan, pi, e
 
 f_string = input("Please enter function ")
 domain = input("Please enter a closed interval for the domain ")
+domain = [int(domain[:domain.index(',')]),int(domain[domain.index(','):])]
 
 fl_orig = [] #Defines fl_orig, which will contain items representing the various "pieces" (numbers, x, operations, etc.) of the function
 
@@ -133,12 +137,6 @@ def evaluate(f_list): #Defines evalute function, which can compute any list usin
 step = 10
 calc_precision = 0.0001
 
-for e_pt in domain:
-    if e_pt == 'p':
-        domain[domain.index(e_pt)] = pi
-    elif e_pt == 'e':
-        domain[domain.index(e_pt)] = e
-
 x_values = [x/step for x in list(range(-1*domain[0]*step,domain[1]*step+1))]
 
 f_data = []
@@ -151,13 +149,6 @@ for x in x_values:
 print(f_data)
 """
 EXTREMA
-I first made a list on where the extrema would be numerically and in an index.
-I then used the first derivative test to look at where the local maxs and mins were.
-The values I found were stored in the list I made earlier and then printed in the program.
-To find the absolute max and min (including endpoints), I assumed that the first x value was the minimum,
-then looked at the next value, and if that next value was smaller then the previous value,
-then that value was stored as the new absolute minimum. This goes on until the lowerst value is
-found.
 """
 
 extrema = [f_data[0][0]]
@@ -196,10 +187,6 @@ print("There is an absolute min at x = "+str(abs_min_x))
 
 """
 INC/DEC INTERVALS
-For increasing and decreasing intervals I found the endpoints and the local maxs and mins.
-Then I looked at the first derivative for a value in between one value and the next one.
-If it was negative then those two points represented a decreasing interval. If it was positive,
-it represented a increasing interval. I then just printed the intervals.
 """
 
 for i in range(0,len(extrema)-1):
@@ -210,9 +197,6 @@ for i in range(0,len(extrema)-1):
 
 """
 POINTS OF INFLECTION
-I looked at the second derivative of each x value and I used that to see where the second
-dervative switched from negative to positive or positive to negative. I stored these values 
-in a list for later use. Then printed them for the user.
 """
 
 POI = [f_data[0][0]]
@@ -233,9 +217,6 @@ POI_i.append(len(f_data))
 
 """
 CONCAvITY
-I did the same thing here for concavity as increasing and decreasing interval.
-But instead of using the values from the local/absolute max/min, I used the endpoints
-and the points of inflection.
 """
 
 for i in range(0,len(extrema)-1):
