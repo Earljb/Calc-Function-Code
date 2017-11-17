@@ -94,7 +94,7 @@ while i < len(f_string): #Looks through string, examines each item, and adds it 
         fl_orig.append(f_string[i])
         i += 1
         
-print(fl_orig)
+#print(fl_orig) #Delete the hashtag at the beginning of this line if you would like to see the list representing the function
 
 def f(x): #Defines function f
     global fl_orig
