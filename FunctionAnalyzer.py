@@ -1,11 +1,11 @@
-"""
-We need to give an input of a function and output:
--extrema (max/min, local/absolute)
--inc/dec intervals
--concave up/down
--points of inflection
-"""
 '''
+---Function Interpreter---
+
+by David Wilson and Earl Barrowes
+(No additional help to cite)
+
+---
+
 Instructions:
 
 1. Click "GO"
