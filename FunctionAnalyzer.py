@@ -180,13 +180,13 @@ extrema = [f_data[0][0]]
 
 extrema_i = [0]
 
-for i in range(0,len(f_data)-2):
-    if f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
+for i in range(0,len(f_data)-2): #This line is creating a loop for looking at the values in the funtion
+    if f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0: #I am looking at the 3rd term in the list f_data for where it switches signs.
         local_min = f_data[i+1][0]
         print("Local min of "+str(round(f_data[i+1][1],2))+" at x = "+str(f_data[i+1][0]))
         extrema.append(local_min)
         extrema_i.append(i+1)
-    elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
+    elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0: #I am looking at the 3rd term in the list f_data for where it switches signs.
         local_max = f_data[i+1][0]
         print("Local max of "+str(round(f_data[i+1][1],2))+" at x = "+str(f_data[i+1][0]))
         extrema.append(local_max)
@@ -199,11 +199,11 @@ abs_max_x = float(f_data[0][0])
 abs_min = float(f_data[0][1])
 abs_min_x = float(f_data[0][0])
 
-for i in range(0, len(f_data)):
-    if float(f_data[i][1]) > abs_max:
+for i in range(0, len(f_data)): #This line is creating a loop for looking at the absolute max and min.
+    if float(f_data[i][1]) > abs_max: #This assumes that the first y value of each index is the abs max, if the next y value is higher than the previous one, then it says that the higher value is the new abs max, and this process is repeated until the absolute max is found.
         abs_max = float(f_data[i][1])
         abs_max_x = float(f_data[i][0])
-    elif float(f_data[i][1]) < abs_min:
+    elif float(f_data[i][1]) < abs_min: #The same process is repeated for the absolute minimum.
         abs_min = float(f_data[i][1])
         abs_min_x = float(f_data[i][0])
         
@@ -232,10 +232,10 @@ for m in amin_list:
 INC/DEC INTERVALS
 """
 
-for i in range(0,len(extrema)-1):
-    if f_data[extrema_i[i]+1][2] < 0:
+for i in range(0,len(extrema)-1): #Creates a loop for looking at the terms
+    if f_data[extrema_i[i]+1][2] < 0: #This is looking at the first derivative and seeing where the first derivative is negative, if it is then the interval is decreasing.
         print("Decreasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
-    elif f_data[extrema_i[i]+1][2] > 0:
+    elif f_data[extrema_i[i]+1][2] > 0: #The same process for increasing intervals.
         print("Increasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
 
 """
@@ -246,12 +246,12 @@ POI = [f_data[0][0]]
 
 POI_i = [0]
 
-for i in range(len(f_data)-2):
-    if f_data[i][3] < 0 and f_data[i+1][3] <= 0 and f_data[i+2][3] > 0:
+for i in range(len(f_data)-2): #Creates a loop to look at the second derivative.
+    if f_data[i][3] < 0 and f_data[i+1][3] <= 0 and f_data[i+2][3] > 0: #This looks at where the second derivative switches signs, and when it does is stored in the POI list.
         print("Point of inflection at x = "+str(f_data[i+1][0]))
         POI.append(f_data[i+1][0])
         POI_i.append(i+1)
-    elif f_data[i][3] > 0 and f_data[i+1][3] >= 0 and f_data[i+2][3] < 0:
+    elif f_data[i][3] > 0 and f_data[i+1][3] >= 0 and f_data[i+2][3] < 0: #Same process as above, but for the second switch in sign.
         print("Point of inflection at x = "+str(f_data[i+1][0]))
         POI.append(f_data[i+1][0])
         POI_i.append(i+1)
@@ -262,7 +262,7 @@ POI_i.append(len(f_data))
 CONCAvITY
 """
 
-for i in range(0,len(POI)-1):
+for i in range(0,len(POI)-1): #
     if f_data[POI_i[i]+1][3] < 0:
         print("Concave down interval on ["+str(POI[i])+", "+str(POI[i+1])+"]")
     elif f_data[POI_i[i]+1][3] > 0:
