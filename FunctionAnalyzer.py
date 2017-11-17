@@ -168,12 +168,12 @@ extrema_i = [0]
 for i in range(0,len(f_data)-2):
     if f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
         local_min = f_data[i+1][0]
-        print("There is a local min of "+str(f_data[i+1][1])+" at x = "+str(f_data[i+1][0]))
+        print("There is a local min of "+str(round(f_data[i+1][1],2))+" at x = "+str(f_data[i+1][0]))
         extrema.append(local_min)
         extrema_i.append(i+1)
     elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
         local_max = f_data[i+1][0]
-        print("There is a local max of "+str(f_data[i+1][1])+" at x = "+str(f_data[i+1][0]))
+        print("There is a local max of "+str(round(f_data[i+1][1],2))+" at x = "+str(f_data[i+1][0]))
         extrema.append(local_max)
         extrema_i.append(i+1)
 extrema.append(f_data[-1][0])
@@ -202,9 +202,9 @@ for i in range(0, len(f_data)):
         amax_list.append([float(f_data[i][0]),float(f_data[i][1])])
 
 for m in amax_list:
-    print("There is an absolute max of "+str(m[1])+" at x = "+str(m[0]))
+    print("There is an absolute max of "+str(round(m[1],2))+" at x = "+str(m[0]))
 for m in amin_list:
-    print("There is an absolute min of "+str(m[1])+" at x = "+str(m[0]))
+    print("There is an absolute min of "+str(round(m[1],2))+" at x = "+str(m[0]))
 #print("There is an absolute min at x = "+str(abs_min_x))
 
 """
