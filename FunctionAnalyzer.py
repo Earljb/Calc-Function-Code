@@ -207,23 +207,23 @@ for i in range(0, len(f_data)):
         abs_min = float(f_data[i][1])
         abs_min_x = float(f_data[i][0])
         
-amax_list = []
+amax_list = [] #Creates list for absolute extrema in case there is a "tie"
 amin_list = []
         
-for i in range(0, len(f_data)):
+for i in range(0, len(f_data)): #Adds any additional absolute extrema to lists
     if float(f_data[i][1]) == abs_min:
         amin_list.append([float(f_data[i][0]),float(f_data[i][1])])
     if float(f_data[i][1]) == abs_max:
         amax_list.append([float(f_data[i][0]),float(f_data[i][1])])
 
-for m in amax_list:
+for m in amax_list: #Prints endpoints as local extrema
     if m[0] == domain[0] or m[0] == domain[1]:
         print("There is a local max of "+str(round(m[1],2))+" at x = "+str(m[0]))
 for m in amin_list:
     if m[0] == domain[0] or m[0] == domain[1]:
         print("There is a local min of "+str(round(m[1],2))+" at x = "+str(m[0]))
 
-for m in amax_list:
+for m in amax_list: #Prints absolute extrema
     print("There is an absolute max of "+str(round(m[1],2))+" at x = "+str(m[0]))
 for m in amin_list:
     print("There is an absolute min of "+str(round(m[1],2))+" at x = "+str(m[0]))
