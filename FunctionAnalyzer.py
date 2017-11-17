@@ -85,6 +85,13 @@ for i in range(0,len(extrema)-1):
 CONCAvITY
 """
 
+for i in range(0,len(extrema)-1):
+    print(str(extrema_i[i]+1))
+    if f_data[extrema_i[i]+1][3] < 0:
+        print("There is a concave down interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
+    elif f_data[extrema_i[i]+1][3] > 0:
+        print("There is a concave up interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
+
 """
 POINTS OF INFLECTION
 """
