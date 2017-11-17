@@ -217,6 +217,13 @@ for i in range(0, len(f_data)):
         amax_list.append([float(f_data[i][0]),float(f_data[i][1])])
 
 for m in amax_list:
+    if m[0] == domain[0] or m[0] == domain[1]:
+        print("There is a local max of "+str(round(m[1],2))+" at x = "+str(m[0]))
+for m in amin_list:
+    if m[0] == domain[0] or m[0] == domain[1]:
+        print("There is a local min of "+str(round(m[1],2))+" at x = "+str(m[0]))
+
+for m in amax_list:
     print("There is an absolute max of "+str(round(m[1],2))+" at x = "+str(m[0]))
 for m in amin_list:
     print("There is an absolute min of "+str(round(m[1],2))+" at x = "+str(m[0]))
