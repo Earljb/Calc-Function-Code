@@ -38,19 +38,23 @@ for i in range(0,len(f_data)-2):
         print("Local max at x = "+str(f_data[i+1][0]))
 
 abs_max = float(f_data[0][1])
+abs_max_x = float(f_data[0][0])
 abs_min = float(f_data[0][1])
+abs_min_x = float(f_data[0][0])
 
 for i in range(0, len(f_data)):
     print(str(i))
     print(str(f_data[i][1]))
     print(str(max(f_data[:][1])))
     if float(f_data[i][1]) > abs_max:
-        abs_max = float(f_data[i][0])
+        abs_max = float(f_data[i][1])
+        abs_max_x = float(f_data[i][0])
     elif float(f_data[i][1]) < abs_min:
-        abs_min = float(f_data[i][0])
+        abs_min = float(f_data[i][1])
+        abs_min_x = float(f_data[i][0])
 
-print("There is an absolute max at x = "+str(abs_max))
-print("There is an absolute min at x = "+str(abs_min))
+print("There is an absolute max at x = "+str(abs_max_x))
+print("There is an absolute min at x = "+str(abs_min_x))
 
 """
 INC/DEC INTERVALS
