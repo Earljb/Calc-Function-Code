@@ -262,7 +262,7 @@ POI_i.append(len(f_data))
 CONCAvITY
 """
 
-for i in range(0,len(extrema)-1):
+for i in range(0,len(POI)-1):
     if f_data[POI_i[i]+1][3] < 0:
         print("Concave down interval on ["+str(POI[i])+", "+str(POI[i+1])+"]")
     elif f_data[POI_i[i]+1][3] > 0:
