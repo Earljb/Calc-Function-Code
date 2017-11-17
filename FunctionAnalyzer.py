@@ -43,9 +43,6 @@ abs_min = float(f_data[0][1])
 abs_min_x = float(f_data[0][0])
 
 for i in range(0, len(f_data)):
-    print(str(i))
-    print(str(f_data[i][1]))
-    print(str(max(f_data[:][1])))
     if float(f_data[i][1]) > abs_max:
         abs_max = float(f_data[i][1])
         abs_max_x = float(f_data[i][0])
@@ -63,14 +60,14 @@ INC/DEC INTERVALS
 d_interval = []
 i_interval = []
 
-for i in range(len(f_data)-2):
+for i in range(0,len(f_data)-2):
     if f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
         d_start = f_data[i][0]
     elif f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
         d_stop = f_data[i][0]
     d_interval = [d_start,d_stop]
     
-for i in range(len(f_data)-2):
+for i in range(0,len(f_data)-2):
     if f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
         i_start = f_data[i][0]
     elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
