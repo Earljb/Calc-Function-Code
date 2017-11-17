@@ -8,7 +8,7 @@ We need to give an input of a function and output:
 '''
 Instructions:
 
-1. Hit "GO"
+1. Click "GO"
 
 2. Enter a function into the input box
 
@@ -40,13 +40,19 @@ Example domain inputs:
 -1,1
 0,5
 -10,0
+
+4. Enter a "step" value, which controls the precision of calculations.  Multiples of
+ten are recommended.  100 is a good value to start with (the program should run in roughly
+30 seconds).  If the program is struggling, try a step of 10, a smaller domain, and/or
+a less complex function.
 '''
 
 from math import sin, cos, tan, pi, e
 
-f_string = input("Please enter function ")
-domain = input("Please enter a closed interval for the domain ")
-domain = [int(domain[:domain.index(',')]),int(domain[domain.index(',')+1:])]
+f_string = input("Please enter function \nf(x) =") #Gathers function input
+domain = input("Please enter a closed interval for the domain (ex. -1,1) ") #Gathers domain input
+domain = [int(domain[:domain.index(',')]),int(domain[domain.index(',')+1:])] #Converts domain input to list form
+step = int(input('Please enter a "step" value to control the precision of calculations '))
 
 fl_orig = [] #Defines fl_orig, which will contain items representing the various "pieces" (numbers, x, operations, etc.) of the function
 
