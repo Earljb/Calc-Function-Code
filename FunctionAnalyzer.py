@@ -72,7 +72,10 @@ print("There is an absolute min at x = "+str(abs_min_x))
 INC/DEC INTERVALS
 """
 
+print(str(f_data[extrema_i[1]][2]))
+
 for i in range(0,len(extrema)-1):
+    print(str(extrema_i[i]+1))
     if f_data[extrema_i[i]+1][2] < 0:
         print("There is a decreasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
 
