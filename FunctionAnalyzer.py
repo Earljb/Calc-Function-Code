@@ -18,7 +18,7 @@ Function input rules:
 '*' (multiplication), '/' (division), '^' exponent
 -Decimals are supported (ex. 2.76)
 -Note that '-' denotes subtraction; use '_' as a negative sin (ex. _3*x represents -3x)
--Only enter negative signs before numbers, not parentheses or trig functions 
+-Only enter negative signs before numbers or x, not parentheses or trig functions 
 (ex. write -(x+2) as _1*(x+2), write -sinx as _1*sinx)
 -Always enter the '*' sign; do NOT write numbers/variables/groups next to each other
 with no symbol to imply multiplication (ex. write 2*(x+1), NOT 2(x+1))
@@ -45,14 +45,25 @@ Example domain inputs:
 ten are recommended.  100 is a good value to start with (the program should run in roughly
 30 seconds).  If the program is struggling, try a step of 10, a smaller domain, and/or
 a less complex function.
-'''
 
+5. The function will then output all local extrema, followed by all absolute extrema.
+Note that absolute extrema are also local extrema, and as a result will be list twice.
+The function will also output information regarding increasing/decreasing intervals,
+concavity, and points of inflection.
+'''
+"""
+Input
+"""
 from math import sin, cos, tan, pi, e
 
-f_string = input("Please enter function \nf(x) =") #Gathers function input
+f_string = input("Please enter function \nf(x) = ") #Gathers function input
 domain = input("Please enter a closed interval for the domain (ex. -1,1) ") #Gathers domain input
 domain = [int(domain[:domain.index(',')]),int(domain[domain.index(',')+1:])] #Converts domain input to list form
 step = int(input('Please enter a "step" value to control the precision of calculations '))
+
+"""
+Define f(x)
+"""
 
 fl_orig = [] #Defines fl_orig, which will contain items representing the various "pieces" (numbers, x, operations, etc.) of the function
 
@@ -143,6 +154,10 @@ def evaluate(f_list): #Defines evalute function, which can compute any list usin
         f_list = f_list[:op_i-1]+[result]+f_list[op_i+2:]
     return f_list[0] #List should now contain only one number, which represents the calculated result - function returns this number
     
+"""
+Calculate f(x), f'(x), f''(x)
+"""
+
 calc_precision = 0.0001 #Variable which controls the precision of numerical derivative calculations
 
 x_values = [x/step for x in list(range(domain[0]*step,domain[1]*step+1))] #Defines list of x values which will be used using domain and step
@@ -205,7 +220,6 @@ for m in amax_list:
     print("There is an absolute max of "+str(round(m[1],2))+" at x = "+str(m[0]))
 for m in amin_list:
     print("There is an absolute min of "+str(round(m[1],2))+" at x = "+str(m[0]))
-#print("There is an absolute min at x = "+str(abs_min_x))
 
 """
 INC/DEC INTERVALS
