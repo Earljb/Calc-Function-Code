@@ -10,18 +10,25 @@ Instructions:
 
 Hit "GO" and enter a function into the input box
 
+-Use x as the independent variable
 -Denote operations using the following symbols: '+' (addition), '-' (subtraction),
 '*' (multiplication), '/' (division), '^' exponent
+-Decimals are supported (ex. 2.76)
 -Note that '-' denotes subtraction; use '_' as a negative sin (ex. _3*x represents -3x)
 -Only enter negative signs before numbers, not parentheses or trig functions 
 (ex. write -(x+2) as _1*(x+2), write -sinx as _1*sinx)
--Always enter the '*' sign - do NOT write numbers/variables/groups next to each other
+-Always enter the '*' sign; do NOT write numbers/variables/groups next to each other
 with no symbol to imply multiplication (ex. write 2*(x+1), NOT 2(x+1))
 -Denote trig functions using their appropriate three-letter abbreviations
 (sin, cos, tan, csc, sec, cot)
 -Parentheses may be used (multiple sets may be used, but not concentric sets)
 -Use parentheses and the division symbol for rational functions
 -Pi and Euler's number may be denoted using p and e respectively
+
+Example inputs:
+_3*(x-1)^3
+7*sin(x+p)
+5x^4-1.3x^2
 '''
 
 from math import sin, cos, tan, pi, e
