@@ -74,7 +74,7 @@ INC/DEC INTERVALS
 
 for i in range(0,len(extrema)-1):
     if f_data[extrema_i[i]+1][2] < 0:
-        print("There is a decreasing interval on ["+str(extrema_i)+", "+str(extrema_i+1)+"]")
+        print("There is a decreasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
 
 """
 CONCAvITY
