@@ -35,13 +35,14 @@ extrema = [f_data[0][0]]
 
 for i in range(0,len(f_data)-2):
     if f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
-        local_min = f_data[i+!][0]
+        local_min = f_data[i+1][0]
         print("Local min at x = "+str(f_data[i+1][0]))
         extrema.append(local_min)
     elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
-        local_max = f_data[i+!][0]
+        local_max = f_data[i+1][0]
         print("Local max at x = "+str(f_data[i+1][0]))
         extrema.append(local_max)
+extrema.append(f_data[-1][0])
 
 print(str(extrema))
 
