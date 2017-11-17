@@ -191,9 +191,21 @@ for i in range(0, len(f_data)):
     elif float(f_data[i][1]) < abs_min:
         abs_min = float(f_data[i][1])
         abs_min_x = float(f_data[i][0])
+        
+amax_list = [[abs_max_x,abs_max]]
+amin_list = [[a_min_x,a_min]]
+        
+for i in range(0, len(f_data)):
+    if float(f_data[i][1]) == abs_max:
+        amax_list.append([float(f_data[i][0]),float(f_data[i][1])])
+    if float(f_data[i][1]) == abs_min:
+        amin_list.append([float(f_data[i][0]),float(f_data[i][1])])
 
-print("There is an absolute max at x = "+str(abs_max_x))
-print("There is an absolute min at x = "+str(abs_min_x))
+for m in amax_list:
+    print("There is an absolute max of "+str(m[1])+" at x = "+str(m[0]))
+for m in amin_list:
+    print("There is an absolute min of "+str(m[1])+" at x = "+str(m[0]))
+#print("There is an absolute min at x = "+str(abs_min_x))
 
 """
 INC/DEC INTERVALS
