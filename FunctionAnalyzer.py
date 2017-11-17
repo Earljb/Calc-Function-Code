@@ -171,7 +171,7 @@ for x in x_values:
     f_data.append([x,f(x),fp(x),(fp(x+calc_precision)-fp(x-calc_precision))/(2*calc_precision)]) #Assembles f_data
 #f''(x) is calculated by finding the slope between two nearby points on f'(x)
     
-print(f_data)
+#print(f_data) #Remove the hashtag at the beginning of this line if you would like to see f_data
 """
 EXTREMA
 """
@@ -183,12 +183,12 @@ extrema_i = [0]
 for i in range(0,len(f_data)-2):
     if f_data[i][2] < 0 and f_data[i+1][2] <= 0 and f_data[i+2][2] > 0:
         local_min = f_data[i+1][0]
-        print("There is a local min of "+str(round(f_data[i+1][1],2))+" at x = "+str(f_data[i+1][0]))
+        print("Local min of "+str(round(f_data[i+1][1],2))+" at x = "+str(f_data[i+1][0]))
         extrema.append(local_min)
         extrema_i.append(i+1)
     elif f_data[i][2] > 0 and f_data[i+1][2] >= 0 and f_data[i+2][2] < 0:
         local_max = f_data[i+1][0]
-        print("There is a local max of "+str(round(f_data[i+1][1],2))+" at x = "+str(f_data[i+1][0]))
+        print("Local max of "+str(round(f_data[i+1][1],2))+" at x = "+str(f_data[i+1][0]))
         extrema.append(local_max)
         extrema_i.append(i+1)
 extrema.append(f_data[-1][0])
@@ -218,15 +218,15 @@ for i in range(0, len(f_data)): #Adds any additional absolute extrema to lists
 
 for m in amax_list: #Prints endpoints as local extrema
     if m[0] == domain[0] or m[0] == domain[1]:
-        print("There is a local max of "+str(round(m[1],2))+" at x = "+str(m[0]))
+        print("Local max of "+str(round(m[1],2))+" at x = "+str(m[0]))
 for m in amin_list:
     if m[0] == domain[0] or m[0] == domain[1]:
-        print("There is a local min of "+str(round(m[1],2))+" at x = "+str(m[0]))
+        print("Local min of "+str(round(m[1],2))+" at x = "+str(m[0]))
 
 for m in amax_list: #Prints absolute extrema
-    print("There is an absolute max of "+str(round(m[1],2))+" at x = "+str(m[0]))
+    print("Absolute max of "+str(round(m[1],2))+" at x = "+str(m[0]))
 for m in amin_list:
-    print("There is an absolute min of "+str(round(m[1],2))+" at x = "+str(m[0]))
+    print("Absolute min of "+str(round(m[1],2))+" at x = "+str(m[0]))
 
 """
 INC/DEC INTERVALS
@@ -234,9 +234,9 @@ INC/DEC INTERVALS
 
 for i in range(0,len(extrema)-1):
     if f_data[extrema_i[i]+1][2] < 0:
-        print("There is a decreasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
+        print("Decreasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
     elif f_data[extrema_i[i]+1][2] > 0:
-        print("There is a increasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
+        print("Increasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
 
 """
 POINTS OF INFLECTION
@@ -264,7 +264,7 @@ CONCAvITY
 
 for i in range(0,len(extrema)-1):
     if f_data[POI_i[i]+1][3] < 0:
-        print("There is a concave down interval on ["+str(POI[i])+", "+str(POI[i+1])+"]")
+        print("Concave down interval on ["+str(POI[i])+", "+str(POI[i+1])+"]")
     elif f_data[POI_i[i]+1][3] > 0:
-        print("There is a concave up interval on ["+str(POI[i])+", "+str(POI[i+1])+"]")
+        print("Concave up interval on ["+str(POI[i])+", "+str(POI[i+1])+"]")
 
