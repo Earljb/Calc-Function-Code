@@ -193,7 +193,7 @@ for i in range(0, len(f_data)):
         abs_min_x = float(f_data[i][0])
         
 amax_list = [[abs_max_x,abs_max]]
-amin_list = [[a_min_x,a_min]]
+amin_list = [[abs_min_x,a_min]]
         
 for i in range(0, len(f_data)):
     if float(f_data[i][1]) == abs_max:
