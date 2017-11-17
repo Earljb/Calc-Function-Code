@@ -78,6 +78,8 @@ for i in range(0,len(extrema)-1):
     print(str(extrema_i[i]+1))
     if f_data[extrema_i[i]+1][2] < 0:
         print("There is a decreasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
+    elif f_data[extrema_i[i]+1][2] > 0:
+        print("There is a increasing interval on ["+str(extrema[i])+", "+str(extrema[i+1])+"]")
 
 """
 CONCAvITY
