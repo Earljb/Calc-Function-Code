@@ -98,9 +98,6 @@ for i in range(len(f_data)-2):
 POI.append(f_data[-1][0])
 POI_i.append(len(f_data))
 
-print(str(POI))
-print(str(POI_i))
-
 """
 CONCAvITY
 """
