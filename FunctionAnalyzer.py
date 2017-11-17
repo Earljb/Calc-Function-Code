@@ -28,16 +28,13 @@ with no symbol to imply multiplication (ex. write 2*(x+1), NOT 2(x+1))
 Example inputs:
 _3*(x-1)^3
 7*sin(x+p)
-5x^4-1.3x^2
+5*x^4-1.3*x^2
 '''
 
 from math import sin, cos, tan, pi, e
 
-f_string = input("Please enter function ")
-#x_val = float(input("Please enter x value "))
+f_string = input("Please enter function \nf(x) =")
 
-n_test = ['0','1','2','3','4','5','6','7','8','9','10','.']
-t_test = ['s','c','t']
 
 fl_orig = [] #Defines fl_orig, which will contain items representing the various "pieces" (numbers, x, operations, etc.) of the function
 
@@ -46,11 +43,11 @@ i = 0
 while i < len(f_string): #Looks through string, examines each item, and adds it to list in the appropriate form
     if f_string[i] in n_test: #Adds multi-digit numbers (ex. 101) as list items
         num = ''
-        while i < len(f_string) and f_string[i] in n_test:
+        while i < len(f_string) and f_string[i] in ['0','1','2','3','4','5','6','7','8','9','10','.']:
             num += f_string[i]
             i += 1
         fl_orig.append(float(num))
-    elif f_string[i] in t_test: #Adds three-letter representations of trig functions (ex. sin) as list items
+    elif f_string[i] in ['s','c','t']: #Adds three-letter representations of trig functions (ex. sin) as list items
         tf = ''
         for x in range(3):
             tf += f_string[i]
@@ -126,7 +123,7 @@ def evaluate(f_list): #Defines evalute function, which can compute any list usin
         f_list = f_list[:op_i-1]+[result]+f_list[op_i+2:]
     return f_list[0] #List should now contain only one number, which represents the calculated result - function returns this number
     
-step = 100
+step = 10
 calc_precision = 0.0001
 
 x_values = [x/step for x in list(range(-3*step,3*step+1))]
